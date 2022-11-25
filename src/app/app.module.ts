@@ -5,16 +5,31 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddCartComponent } from './add-cart/add-cart.component';
 import { ViewCartComponent } from './view-cart/view-cart.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const myRoutes:Routes = [
+  {
+    path:"",
+    component:AddCartComponent
+  },
+  {
+    path:"view",
+    component:ViewCartComponent
+  }
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     AddCartComponent,
-    ViewCartComponent
+    ViewCartComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
